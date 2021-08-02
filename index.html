@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados JS</title>
+    <style>
+        #gifDados {
+            /* border: 1px solid black; */
+            width: 500px;
+            height: 0;
+            background-image: url(./assets/todos-dados.gif);
+            background-size: cover;
+            background-position-x: 20px;
+            transition: height .4s;
+        }
+    </style>
+</head>
+<body>
+    <audio id="sndAcerto" src="./sounds/acerto.mp3"></audio>
+    <audio id="sndErro" src="./sounds/erro.mp3"></audio>
+    <audio id="sndRisada" src="./sounds/risada.mp3"></audio>
+    
+    <button onclick="tocarEfeito()">Play</button>
+    <button onclick="paraSom()">Stop</button>
+    
+    <div id="gifDados"></div>
+
+
+    <script>
+        //Importar o script de funções
+        //criar script com função init() - inicialização do JS 
+        
+        
+        //Testes
+        const gifBox = document.getElementById('gifDados')
+        let som
+        function tocarEfeito(efeito = "sndErro") {
+            
+            som = document.getElementById(efeito)
+            // som.currentTime = 8;
+            som.play();
+            gifBox.style.height = '110px'
+
+        }
+
+        function paraSom() {
+            som.pause()
+            gifBox.style.height = '0'
+        }
+    </script>
+</body>
+</html>
